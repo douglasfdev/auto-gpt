@@ -34,26 +34,42 @@
 #[cfg(test)]
 mod tests {
   #[allow(unused_macros)]
-  macro_rules! mad_skills {
-      // ($x: expr) => {
-      //   format!("You sent a expression: {}", $x)
-      // };
-      ($x: ty) => {
-        match stringify!($x) {
-          "i32" => "You sent an i32".to_string(),
-          "String" => "You sent a String".to_string(),
-          "Vec<String>" => "You sent a Vec<String>".to_string(),
-          "Option<T>" => "You sent an Option<T>".to_string(),
-          "String" => "You sent a String".to_string(),
-          "Vec<i32>" => "You sent a Vec<i32>".to_string(),
-          _ => "You sent something else".to_string(),
+  // macro_rules! mad_skills {
+  //     // ($x: expr) => {
+  //     //   format!("You sent a expression: {}", $x)
+  //     // };
+  //     ($x: ty) => {
+  //       match stringify!($x) {
+  //         "i32" => "You sent an i32".to_string(),
+  //         "String" => "You sent a String".to_string(),
+  //         "Vec<String>" => "You sent a Vec<String>".to_string(),
+  //         "Option<T>" => "You sent an Option<T>".to_string(),
+  //         "String" => "You sent a String".to_string(),
+  //         "Vec<i32>" => "You sent a Vec<i32>".to_string(),
+  //         _ => "You sent something else".to_string(),
+  //       }
+  //     }
+  // }
+
+  macro_rules! my_vec {
+      ($($x: expr), +) => {
+        {
+          let mut temp_vec = Vec::new();
+
+          $(
+            temp_vec.push($x);
+          )+
+          temp_vec
         }
-      }
+      };
   }
 
   #[test]
   fn tests_declarative_macro() {
-    let some_var: String = mad_skills!(i32);
-    dbg!(some_var);
+    let y = my_vec!(1,2,3,4,5);
+    dbg!(y);
+
+    // let some_var: String = mad_skills!(i32);
+    // dbg!(some_var);
   }
 }
