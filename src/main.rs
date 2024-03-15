@@ -4,6 +4,7 @@ mod mod_async;
 mod collections;
 mod traits;
 mod polymorfism;
+mod macros;
 
 use crate::my_funcs::add_five;
 use crate::other_funcs::minus_funcs::subtract_ten;
