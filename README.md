@@ -6,3 +6,5 @@ Então será necessário toda vez que tiver uma alteração rodar o comando dock
 Para o Rust fazer a documentação de seu código basta rodar o comando **`cargo doc`** e para visualizar basta rodar o comando **`cargo doc --open`**, e escolher seu navegador favorito para visualizar a documentação de seu programa.
 
 Para executar a documentação da suposta biblioteca, basta rodar o comando **`cd add`** e depois **`cargo doc --open`**
+
+Para rodar os testes basta digitar cargo test nome_da_funcao -- --nocapture, por exemplo: *`cargo test tests_calls_async_fn -- --nocapture`*, esse teste rodara o teste de debug de uma chamada de API.
