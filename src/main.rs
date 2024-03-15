@@ -1,6 +1,7 @@
 mod my_funcs;
 mod other_funcs;
 mod mod_async;
+mod collections;
 
 use crate::my_funcs::add_five;
 use crate::other_funcs::minus_funcs::subtract_ten;
