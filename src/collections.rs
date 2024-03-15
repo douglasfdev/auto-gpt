@@ -1,7 +1,6 @@
-use std::collections::{HashMap, HashSet};
-
 #[cfg(test)]
 mod test {
+  #[allow(unused_imports)]
   use super::*;
 
   #[test]
@@ -9,7 +8,7 @@ mod test {
     let person_one: &str = "Alice";
     let person_two: &str = "Bob";
 
-    let mut results_rm: HashMap<&str, u32> = HashMap::new();
+    let mut results_rm: std::collections::HashMap<&str, u32> = std::collections::HashMap::new();
     results_rm.insert(person_one, 55);
     results_rm.insert(person_two, 51);
 
@@ -23,7 +22,7 @@ mod test {
 
   #[test]
   fn test_hashsets() {
-    let mut names_hs: HashSet<&str> = HashSet::new();
+    let mut names_hs: std::collections::HashSet<&str> = std::collections::HashSet::new();
     names_hs.insert("Alice");
     names_hs.insert("Bob");
     names_hs.insert("Jane");
