@@ -1,3 +1,12 @@
+/*
+  Note: To enable a macro to be used in other files if the crate containing your macro is imported, add this above your macro:
+
+  #[macro_export]
+
+  macro_rules! my_vec { ... }
+*/
+
+
 // Macro Captures
 /* expr
     matches to a valid rust expression
